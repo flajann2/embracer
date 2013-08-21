@@ -1,5 +1,0 @@
-#!/bin/bash
-# The Embracer -- launches application.
-export RUBYLIB="$RUBYLIB:./"
-cd $(dirname $0)
-ruby embracer.rb >>embracer.log
