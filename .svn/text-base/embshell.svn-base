@@ -1,0 +1,45 @@
+#!/usr/bin/bash
+# script-changine directory: The Embracer
+
+set -a
+shopt -s expand_aliases
+
+# Env for work directory
+export devnow=/cygdrive/r/market_anal/embracer
+
+# Env settings for market_anal Deployment
+export database="embracer"
+export desc="The Embracer Datafeed"
+
+echo
+echo
+
+export name="The Embracer Datafeed"
+export docroot="{DOCROOT}"
+
+export sshport="741"
+
+export schemas="schemas"
+export batch="batch"
+export RUBYPATH="$RUBYPATH:$devnow:./"
+export RUBYLIB="$RUBYLIB:$devnow:$devnow/lib:./"
+export RUBY_SRC="src"
+export PATH="$devnow/:$PATH"
+export created="2009-03-04"
+
+# Command default
+export cmd="all"
+
+echo
+echo "Project:       $name"
+echo "Description:   $desc"
+echo "Database:      $database"
+echo "Created:       $created"
+echo
+
+# Some additional useful settings for Market_Anal development.
+alias irb="irb --readline"
+alias ls="ls --color=auto"
+
+cd $devnow
+ruby datafeed.rb

@@ -1,0 +1,73 @@
+#!/usr/bin/env ruby
+
+require "optparse"
+require "ostruct"
+require "mongo"
+require "pp"
+require 'iqfeed_datafeed'
+
+###################################
+# Constants
+SECS_IN_DAY = 3600 * 24
+
+historical = DRbObject.new_with_uri($hserverURI)
+
+###################################
+# Options parsing
+$gopts = OpenStruct.new
+
+# Standard Options
+$gopts.verbose = false
+$gopts.debug = false
+$gopts.warn = true
+$gopts.noop = false
+$gopts.days = 20
+
+OptionParser.new do |opts|
+  opts.banner = %{
+Usage: ticketfetch [options]
+
+tickfetch -- fetch ticks from IQFeed and store them in  Mongo market collections
+}
+  opts.on("-v",
+          "--[no-]verbose",
+          "Verbose output to stdout") { |v| $gopts.verbose = v  }
+  opts.on("-d", "--debug", "Debug output (extensive)") { |v| $gopts.debug = v }
+  opts.on("-w", "--[no-]warn", "Warnings (default)") { |v| $gopts.warn = v }
+  opts.on("-D", "--days DAYS", "Warnings (default)") { |v| $gopts.days = v.to_i }
+end.parse!
+
+symbols = ARGV
+
+$gopts.etime = DateTime.now
+$gopts.btime = $gopts.etime - $gopts.days
+
+puts "Grab %d day(s) of tick data for %s" % [$gopts.days, symbols]
+
+########################################################################
+## Set up the Mongo market.tick to receive the data.
+########################################################################
+mdb = Mongo::Connection.new("localhost").db("market")
+mdb[:market].create_index([
+                           [:symbol, Mongo::ASCENDING],
+                           [:stamp, Mongo::ASCENDING],
+                           [:tick_id, Mongo::ASCENDING]
+                          ], unique: true)
+########################################################################
+## Grab data!!!
+########################################################################
+
+
+symbols.each { |symbol|
+  puts "### Grabbing %s" % symbol
+  sym_begin = Time.now
+  historical.getTicksOverTime(symbol, $gopts.btime, $gopts.etime, false) { |a|
+    block_begin = Time.now
+    puts "  Got %d ticks of %s ending with %s" % [a.count, symbol, a[-1][:stamp]] if $gopts.verbose
+    a.each { |tick| mdb[:market].insert tick } 
+    block_time = Time.now - block_begin
+    puts "  %d ticks took %d seconds to process." % [a.count, block_time] if $gopts.verbose
+  }
+  sym_time = Time.now - sym_begin
+  puts "%s took %d seconds." % [symbol, sym_time]
+}

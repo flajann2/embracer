@@ -1,0 +1,90 @@
+@BP#
+@ED#
+@ES#
+@JE#
+@ME#
+@ND#
+@NQ#
+CSCO
+DI6A.Z
+DI6D.Z
+DI6T.Z
+DI6U.Z
+DJI2MN.X
+II6A.Z
+II6D.Z
+IINA.Z
+IIND.Z
+IINT.Z
+IINU.Z
+IR6T.Z
+JI6T.Z
+JT6T.Z
+JV6T.Z
+OC2T.Z
+OP2T.Z
+PRSC.Z
+PRSP.Z
+RI6T.Z
+SPY
+TI6A.Z
+TI6D.Z
+TICK.Z
+TRIN.Z
+VC2T.Z
+VI6A.Z
+VI6D.Z
+VI6U.Z
+VINA.Z
+VIND.Z
+VIX.XO
+VP2T.Z
+XAU.
+
+
+
+
+[
+        "@BP#",
+        "@ED#",
+        "@ES#",
+        "@JE#",
+        "@ME#",
+        "@ND#",
+        "@NQ#",
+        "CSCO",
+        "DI6A.Z",
+        "DI6D.Z",
+        "DI6T.Z",
+        "DI6U.Z",
+        "DJI2MN.X",
+        "II6A.Z",
+        "II6D.Z",
+        "IINA.Z",
+        "IIND.Z",
+        "IINT.Z",
+        "IINU.Z",
+        "IR6T.Z",
+        "JI6T.Z",
+        "JT6T.Z",
+        "JV6T.Z",
+        "OC2T.Z",
+        "OP2T.Z",
+        "PRSC.Z",
+        "PRSP.Z",
+        "RI6T.Z",
+        "SPY",
+        "TI6A.Z",
+        "TI6D.Z",
+        "TICK.Z",
+        "TRIN.Z",
+        "VC2T.Z",
+        "VI6A.Z",
+        "VI6D.Z",
+        "VI6U.Z",
+        "VINA.Z",
+        "VIND.Z",
+        "VIX.XO",
+        "VP2T.Z",
+        "XAU.X"
+]

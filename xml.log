@@ -1,0 +1,24 @@
+**************************************************2011-09-06 20:59:55 -0400
+/accountservice/account.asmx/GetOxSessionWithSource?sUserName=&sPassword=&sSessionID=&sSource=IN3105
+**************************************************2011-09-06 20:59:55 -0400
+<?xml version="1.0" encoding="utf-8"?>
+<CAppLogin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://oxbranch.optionsxpress.com">
+  <AccountID>0</AccountID>
+  <ErrorMsg>Invalid Login - Please check your username and password</ErrorMsg>
+</CAppLogin>
+**************************************************2011-09-06 21:38:46 -0400
+/accountservice/account.asmx/GetOxSessionWithSource?sUserName=&sPassword=&sSessionID=&sSource=IN3105
+**************************************************2011-09-06 21:38:47 -0400
+<?xml version="1.0" encoding="utf-8"?>
+<CAppLogin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://oxbranch.optionsxpress.com">
+  <AccountID>0</AccountID>
+  <ErrorMsg>Invalid Login - Please check your username and password</ErrorMsg>
+</CAppLogin>
+**************************************************2011-09-30 18:03:30 -0400
+/accountservice/account.asmx/GetOxSessionWithSource?sUserName=&sPassword=&sSessionID=&sSource=IN3105
+**************************************************2011-09-30 18:03:30 -0400
+<?xml version="1.0" encoding="utf-8"?>
+<CAppLogin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://oxbranch.optionsxpress.com">
+  <AccountID>0</AccountID>
+  <ErrorMsg>Invalid Login - Please check your username and password</ErrorMsg>
+</CAppLogin>
