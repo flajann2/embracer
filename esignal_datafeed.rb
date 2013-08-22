@@ -6,7 +6,7 @@ Also, we are doing funneling of messages.
 
 This should run on Windows with the ESignal API. Alas,
 there is no indication they will port this for their latest release.
-And so this will not be supported and FUCK ESignal.
+And so this will not be supported.
 =end
 
 require 'datafeed'

@@ -7,7 +7,7 @@ Basically, ESignal has a way to get XML quotes back, but they don't support
 the XML for everything -- yet. So, I am going to use that in a simple
 driver to get those quotes.
 
-Fuck ESignal, as I am no longer developing stuff for that crappy interface.
+I am no longer developing stuff for that crappy interface.
 I am focusing now on IQFeed and ZenFire.
 
 =end
